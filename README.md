@@ -1,14 +1,3 @@
-# Falco + Falcosidekick + Argo
-
-This repo allows you to create a full stack with:
-* `ArgoCD`
-* `Argo Events`
-* `Argo Workflow`
-* `Falco`
-* `Falcosidekick`
-
-`ArgoCD` is installed first because it's responsible to install all other components in a GitOps mod.
-
 ## Installation
 
 ```bash
@@ -18,3 +7,8 @@ This repo allows you to create a full stack with:
 ## Access to UI
 
 See logs from your terminal, you'll get links and credentials. 
+
+
+
+
+helm upgrade app app/app --namespace=app --values=values.yaml --timeout=555m --wait
