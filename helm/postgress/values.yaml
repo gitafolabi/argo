@@ -1,0 +1,25 @@
+replicaCount: 1
+
+mongo:
+  name: mongo
+  group: db
+  container:
+    image: mongo:9.6-alpine
+    port: 5432
+  service:
+    type: ClusterIP
+    port: 5432
+  volume:
+    name: mongo-storage
+    kind: PersistentVolumeClaim
+    mountPath: /var/lib/mongoql/data
+    pvc:
+      name: mongo-persistent-volume-claim
+      accessMode: ReadWriteOnce
+      storage: 4Gi
+  config:
+    name: mongo-config
+    data: 
+      - key: key
+        value: value
+  
