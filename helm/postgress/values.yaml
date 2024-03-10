@@ -12,7 +12,7 @@ mongo:
   volume:
     name: mongo-storage
     kind: PersistentVolumeClaim
-    mountPath: /var/lib/mongoql/data
+    mountPath: /var/lib/mongo/data
     pvc:
       name: mongo-persistent-volume-claim
       accessMode: ReadWriteOnce
